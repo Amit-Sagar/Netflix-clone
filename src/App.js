@@ -6,11 +6,13 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Account from './pages/Account'
 import ProtectedRoute from './components/ProtectedRoute'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   return (
     <>
       <AuthContextProvider>
+      <div><Toaster/></div>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
