@@ -33,7 +33,7 @@ const Row = ({ title, fetchBaseUrl, rowId }) => {
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
         >
           {data?.map((item, id) => (
-            <Movie item={item} id={id} />
+            <Movie item={item} id={item.id} key={id} />
           ))}
         </div>
         <MdChevronRight

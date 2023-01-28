@@ -5,20 +5,18 @@ import request from "../Request";
 const Main = () => {
   const [movies, setMovies] = useState([]);
   const movie = movies[Math.floor(Math.random() * movies.length)];
-  console.log(movie)
   useEffect(() => {
     axios
       .get(request.requestPopular)
       .then((res) => setMovies(res.data.results))
       .catch((error) => console.log(error));
   }, []);
-  
-  const truncateStr=(str,num)=>{
-    
-    if(str?.length>num){
-        return str?.slice(0,num) + "...";
-    }else{
-        return str;
+
+  const truncateStr = (str, num) => {
+    if (str?.length > num) {
+      return str?.slice(0, num) + "...";
+    } else {
+      return str;
     }
   };
 
@@ -41,8 +39,12 @@ const Main = () => {
               Watch Later
             </button>
           </div>
-          <p className="text-gray-400 text-sm">Released:{movie?.release_date}</p>
-          <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%]">{truncateStr(movie?.overview,150)}</p>
+          <p className="text-gray-400 text-sm">
+            Released:{movie?.release_date}
+          </p>
+          <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%]">
+            {truncateStr(movie?.overview, 150)}
+          </p>
         </div>
       </div>
     </div>
