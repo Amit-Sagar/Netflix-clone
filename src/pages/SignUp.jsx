@@ -9,7 +9,7 @@ const SignUp = () => {
     email: "",
     password: "",
   });
-  const {user, signUp } = UserAuth();
+  const { signUp } = UserAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
